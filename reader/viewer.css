@@ -324,7 +324,7 @@ html[dir='rtl'] .innerCenter {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 200px;
+  width: 400px;
   visibility: hidden;
   -webkit-transition-duration: 200ms;
   -webkit-transition-timing-function: ease;
@@ -335,12 +335,12 @@ html[dir='rtl'] .innerCenter {
 html[dir='ltr'] #sidebarContainer {
   -webkit-transition-property: left;
   transition-property: left;
-  left: -200px;
+  left: -400px;
 }
 html[dir='rtl'] #sidebarContainer {
   -webkit-transition-property: right;
   transition-property: right;
-  right: -200px;
+  right: -400px;
 }
 
 #outerContainer.sidebarMoving > #sidebarContainer,
@@ -369,7 +369,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen > #sidebarContainer {
 html[dir='ltr'] #outerContainer.sidebarOpen > #mainContainer {
   -webkit-transition-property: left;
   transition-property: left;
-  left: 200px;
+  left: 400px;
 }
 html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
   -webkit-transition-property: right;
@@ -383,7 +383,7 @@ html[dir='rtl'] #outerContainer.sidebarOpen > #mainContainer {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  width: 200px;
+  width: 400px;
   background-color: hsla(0,0%,0%,.1);
 }
 html[dir='ltr'] #sidebarContent {
@@ -425,7 +425,7 @@ html[dir='rtl'] #viewerContainer {
 }
 
 #toolbarSidebar {
-  width: 200px;
+  width: 400px;
   height: 32px;
   background-color: #424242; /* fallback */
   background-image: url(images/texture.png),
@@ -1255,10 +1255,10 @@ html[dir='rtl'] .verticalToolbarSeparator {
 
 #thumbnailView {
   position: absolute;
-  width: 120px;
+  width: 250px;
   top: 0;
   bottom: 0;
-  padding: 10px 40px 0;
+  padding: 10px 75px 0;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -1329,7 +1329,7 @@ a:focus > .thumbnail > .thumbnailSelectionRing,
 #outlineView,
 #attachmentsView {
   position: absolute;
-  width: 192px;
+  width: 392px;
   top: 0;
   bottom: 0;
   overflow: auto;

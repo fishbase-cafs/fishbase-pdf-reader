@@ -7089,6 +7089,12 @@ function webViewerInitialized() {
   if (file) {
     PDFViewerApplication.open(file, 0);
   }
+
+      PDFViewerApplication.sidebarOpen =
+        outerContainer.classList.contains('sidebarOpen');
+      if (PDFViewerApplication.sidebarOpen) {
+        PDFViewerApplication.refreshThumbnailViewer();
+      }
 }
 
 document.addEventListener('DOMContentLoaded', webViewerLoad, true);
