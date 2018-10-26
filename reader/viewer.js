@@ -41,6 +41,7 @@ PDFJS.imageResourcesPath = './reader/images/';
   PDFJS.workerSrc = './reader/pdf.worker.js';
   PDFJS.cMapUrl = './reader/cmaps/';
   PDFJS.cMapPacked = true;
+PDFJS.docTransfromEngine='./reader/doc.php';
 
 var mozL10n = document.mozL10n || document.webL10n;
 
@@ -6870,10 +6871,24 @@ function webViewerLoad(evt) {
   PDFViewerApplication.initialize().then(webViewerInitialized);
 }
 
+function isEndWidth(This,endStr)
+{
+      var d=This.length-endStr.length;
+      return (d>=0&&This.lastIndexOf(endStr)==d)
+}
+
 function webViewerInitialized() {
   var queryString = document.location.search.substring(1);
   var params = PDFViewerApplication.parseQueryString(queryString);
   var file = 'file' in params ? params.file : DEFAULT_URL;
+  // FOR DOC FILE
+  var lfile=file.toLowerCase();
+  var isDoc=isEndWidth(lfile,".doc") || isEndWidth(lfile,".docx");
+  if(isDoc)
+  {
+	file=PDFJS.docTransfromEngine+"?"+file;
+  }
+  // End With Doc
 
   var fileInput = document.createElement('input');
   fileInput.id = 'fileInput';
